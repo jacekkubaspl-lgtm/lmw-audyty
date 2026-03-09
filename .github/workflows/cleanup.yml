@@ -1,0 +1,46 @@
+name: Cleanup expired reports
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # codziennie o 6:00 UTC
+  workflow_dispatch:       # reczne odpalenie
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Delete reports older than 14 days
+        run: |
+          TODAY=$(date +%s)
+          DELETED=0
+          for file in raport-*.html; do
+            [ -f "$file" ] || continue
+            FILE_DATE=$(echo "$file" | grep -oP '\d{4}-\d{2}-\d{2}')
+            if [ -n "$FILE_DATE" ]; then
+              FILE_TS=$(date -d "$FILE_DATE" +%s 2>/dev/null) || continue
+              AGE_DAYS=$(( (TODAY - FILE_TS) / 86400 ))
+              if [ "$AGE_DAYS" -gt 14 ]; then
+                echo "Deleting: $file ($AGE_DAYS days old)"
+                rm "$file"
+                DELETED=$((DELETED + 1))
+              fi
+            fi
+          done
+          echo "Deleted $DELETED expired report(s)."
+
+      - name: Commit and push if changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No expired reports to remove."
+          else
+            git commit -m "chore: remove expired reports (older than 14 days)"
+            git push
+          fi

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raport audytu | LMW Commerce</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 48px 32px;
+            text-align: center;
+        }
+        .icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 32px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #f8fafc;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #94a3b8;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+        .card h2 {
+            font-size: 18px;
+            color: #f8fafc;
+            margin-bottom: 16px;
+        }
+        .card p {
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+        .highlight {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+        .benefits {
+            list-style: none;
+            margin: 16px 0;
+        }
+        .benefits li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+        .benefits li::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            color: #34d399;
+            font-weight: 700;
+        }
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .btn-primary {
+            display: inline-block;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+        }
+        .btn-secondary {
+            display: inline-block;
+            padding: 14px 32px;
+            background: transparent;
+            color: #60a5fa;
+            text-decoration: none;
+            border: 1px solid #3b82f6;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: background 0.2s;
+        }
+        .btn-secondary:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+        .footer {
+            margin-top: 40px;
+            color: #475569;
+            font-size: 13px;
+        }
+        .footer a {
+            color: #64748b;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #94a3b8;
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 32px 20px; }
+            h1 { font-size: 22px; }
+            .subtitle { font-size: 16px; }
+            .card { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">&#128202;</div>
+
+        <h1>Ten raport nie jest juz dostepny</h1>
+        <p class="subtitle">
+            Raporty audytowe sa dostepne przez 14 dni od wygenerowania.
+            Ale Twoj sklep wciaz moze zyskac wiecej klientow.
+        </p>
+
+        <div class="card">
+            <h2>Zamow nowy, pelny audyt</h2>
+            <p>
+                Kazdy dzien bez optymalizacji to <span class="highlight">utracona sprzedaz</span>.
+                Problemy, ktore znalezlismy w Twoim sklepie, nadal moga istniec.
+            </p>
+            <p>Co zyskujesz:</p>
+            <ul class="benefits">
+                <li>Analiza szybkosci, SEO i konwersji Twojego sklepu</li>
+                <li>Top 3 problemy, ktore kosztuja Cie klientow</li>
+                <li>Konkretne rekomendacje, nie ogolniki</li>
+                <li>Bezplatna 15-min konsultacja z ekspertem Shoper</li>
+            </ul>
+        </div>
+
+        <div class="cta-group">
+            <a href="https://lmwcommerce.com/#brief" class="btn-primary">
+                Zamow darmowy audyt ponownie
+            </a>
+            <a href="mailto:kontakt@lmwcommerce.com?subject=Pytanie%20o%20audyt%20sklepu" class="btn-secondary">
+                Napisz do nas — kontakt@lmwcommerce.com
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; LMW Commerce &mdash; specjalisci e-commerce Shoper</p>
+            <p><a href="https://lmwcommerce.com">lmwcommerce.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
